@@ -1,11 +1,11 @@
 <?php
 
-namespace Tonysm\Dbcreatecommand;
+namespace Tonysm\DbCreateCommand;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Tonysm\Dbcreatecommand\Skeleton\SkeletonClass
+ * @see \Tonysm\DbCreateCommand\Skeleton\SkeletonClass
  */
 class DbCreateCommandFacade extends Facade
 {

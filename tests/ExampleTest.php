@@ -1,6 +1,6 @@
 <?php
 
-namespace Tonysm\Dbcreatecommand\Tests;
+namespace Tonysm\DbCreateCommand\Tests;
 
 use PHPUnit\Framework\TestCase;
 

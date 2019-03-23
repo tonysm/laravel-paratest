@@ -1,6 +1,6 @@
 <?php
 
-namespace Tonysm\Dbcreatecommand;
+namespace Tonysm\DbCreateCommand;
 
 class DbCreateCommand
 {
