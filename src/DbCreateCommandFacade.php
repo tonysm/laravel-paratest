@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \Tonysm\Dbcreatecommand\Skeleton\SkeletonClass
  */
-class DbcreatecommandFacade extends Facade
+class DbCreateCommandFacade extends Facade
 {
     /**
      * Get the registered name of the component.

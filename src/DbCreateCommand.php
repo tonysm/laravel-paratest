@@ -2,7 +2,7 @@
 
 namespace Tonysm\Dbcreatecommand;
 
-class Dbcreatecommand
+class DbCreateCommand
 {
     // Build your next great package.
 }

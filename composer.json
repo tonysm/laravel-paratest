@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Tonysm\\Dbcreatecommand\\": "src"
+            "Tonysm\\DbCreateCommand\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tonysm\\Dbcreatecommand\\Tests\\": "tests"
+            "Tonysm\\DbCreateCommand\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,10 +44,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Tonysm\\Dbcreatecommand\\DbcreatecommandServiceProvider"
+                "Tonysm\\Dbcreatecommand\\DbCreateCommandServiceProvider"
             ],
             "aliases": {
-                "Dbcreatecommand": "Tonysm\\Dbcreatecommand\\DbcreatecommandFacade"
+                "DbCreateCommand": "Tonysm\\DbCreateCommand\\DbCreateCommandFacade"
             }
         }
     }
