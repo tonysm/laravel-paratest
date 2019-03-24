@@ -18,7 +18,7 @@ class DryRunConnector implements Connector
      */
     public function exec(string $sql)
     {
-        return $this->output->write(sprintf(
+        return $this->output->writeln(sprintf(
             '<info>[DRY RUN] %s</info>',
             $sql
         ));

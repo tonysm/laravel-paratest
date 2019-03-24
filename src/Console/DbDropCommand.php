@@ -11,14 +11,14 @@ use Tonysm\DbCreateCommand\Database\{
 };
 use Illuminate\Console\Command;
 
-class DbCreateCommand extends Command
+class DbDropCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'db:create 
+    protected $signature = 'db:drop 
         {--dry-run}
     ';
 
@@ -27,7 +27,7 @@ class DbCreateCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Creates the database.';
+    protected $description = 'Drops the database.';
 
     /**
      * Create a new command instance.
@@ -60,12 +60,12 @@ class DbCreateCommand extends Command
             $grammars
         );
 
-        if ($builder->createDatabase($configs) === false) {
-            $this->error('Could not create the database.');
+        if ($builder->dropDatabase($configs) === false) {
+            $this->error('Could not drop the database.');
             return 1;
         }
 
-        $this->info(sprintf('Database "%s" created successfully.', $configs['database']));
+        $this->info(sprintf('Database "%s" drop successfully.', $configs['database']));
     }
 
     private function makeConnector(array $configs, bool $dryRun = false): Connector

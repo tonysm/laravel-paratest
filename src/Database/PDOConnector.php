@@ -11,7 +11,7 @@ class PDOConnector implements Connector
         $this->pdo = $pdo;
     }
 
-    public static function make(array $options): PDOConnector
+    public static function make(array $configs): PDOConnector
     {
         $host = sprintf(
             '%s:host=%s',
