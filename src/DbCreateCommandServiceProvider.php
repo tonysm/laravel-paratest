@@ -3,6 +3,7 @@
 namespace Tonysm\DbCreateCommand;
 
 use Illuminate\Support\ServiceProvider;
+use Tonysm\DbCreateCommand\Console\DbCreateCommand as DbCreateCLICommand;
 
 class DbCreateCommandServiceProvider extends ServiceProvider
 {
@@ -17,7 +18,9 @@ class DbCreateCommandServiceProvider extends ServiceProvider
             ], 'config');
 
             // Registering package commands.
-            // $this->commands([]);
+            $this->commands([
+                DbCreateCLICommand::class,
+            ]);
         }
     }
 
