@@ -1,11 +1,11 @@
 {
-    "name": "tonysm/dbcreatecommand",
+    "name": "tonysm/dbcreatecmd",
     "description": "Artisan command to create a database",
     "keywords": [
         "tonysm",
-        "dbcreatecommand"
+        "dbcreatecmd"
     ],
-    "homepage": "https://github.com/tonysm/dbcreatecommand",
+    "homepage": "https://github.com/tonysm/dbcreatecmd",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -44,7 +44,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Tonysm\\Dbcreatecommand\\DbCreateCommandServiceProvider"
+                "Tonysm\\DbCreateCommand\\DbCreateCommandServiceProvider"
             ],
             "aliases": {
                 "DbCreateCommand": "Tonysm\\DbCreateCommand\\DbCreateCommandFacade"
