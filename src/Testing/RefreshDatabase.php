@@ -3,7 +3,6 @@
 namespace Tonysm\DbCreateCommand\Testing;
 
 use Illuminate\Contracts\Console\Kernel;
-use Illuminate\Foundation\Testing\RefreshDatabaseState;
 
 trait RefreshDatabase
 {
