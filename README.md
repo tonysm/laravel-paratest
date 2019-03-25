@@ -21,9 +21,13 @@ composer require tonysm/dbcreatecommand
 
 ## Usage
 
+**Attention: You will need a user with rights to create databases.**
+
 Instead of using Laravel's _RefreshDatabase_ trait, use the package one:
 
 ```php
+<?php
+
 use Tonysm\DbCreateCommand\Testing\RefreshDatabase;
 
 class MyTest extends TestCase
