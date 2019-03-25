@@ -104,6 +104,14 @@ paratest --runner ParatestLaravelRunner
 
 This will clean up the test databases after your test finishes running.
 
+This package also gives you the following Artisan commands:
+
+- `php artisan db:create`
+- `php artisan db:drop`
+- `php artisan db:recreate`
+
+Use it wisely.
+
 ### Testing
 
 ``` bash
