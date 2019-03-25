@@ -34,7 +34,7 @@ class MySQLTest extends TestCase
         $grammar = new MySQL();
 
         $this->assertEquals(
-            'DROP DATABASE fakedb;',
+            'DROP DATABASE IF EXISTS fakedb;',
             $grammar->compileDropDatabase('fakedb')
         );
     }

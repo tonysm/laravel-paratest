@@ -34,7 +34,7 @@ class PgSQLTest extends TestCase
         $grammar = new PgSQL();
 
         $this->assertEquals(
-            'DROP DATABASE fakedb;',
+            'DROP DATABASE IF EXISTS fakedb;',
             $grammar->compileDropDatabase('fakedb')
         );
     }

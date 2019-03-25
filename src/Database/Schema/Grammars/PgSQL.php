@@ -19,7 +19,7 @@ class PgSQL implements SQL
     public function compileDropDatabase(string $database): string
     {
         return sprintf(
-            'DROP DATABASE %s;',
+            'DROP DATABASE IF EXISTS %s;',
             $database
         );
     }
