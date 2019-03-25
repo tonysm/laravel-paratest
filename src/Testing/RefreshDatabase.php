@@ -52,7 +52,7 @@ trait RefreshDatabase
         $this->swapTestingDatabase();
 
         if (! RefreshDatabaseState::$migrated) {
-            $this->artisan('db:recreate');
+            $this->artisan('db:create');
             $this->artisan('migrate:fresh', $this->shouldDropViews() ? [
                 '--drop-views' => true,
             ] : []);
