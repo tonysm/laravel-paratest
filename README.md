@@ -21,6 +21,50 @@ composer require tonysm/dbcreatecommand
 
 ## Usage
 
+Instead of using Laravel's _RefreshDatabase_ trait, use the package one:
+
+```php
+use Tonysm\DbCreateCommand\Testing\RefreshDatabase;
+
+class MyTest extends TestCase
+{
+    use RefreshDatabase;
+}
+```
+
+Tip: to replace all existing usages of Laravel's RefreshDatabase trait with the package's, you can use the following command:
+
+```bash
+grep -rl 'Illuminate\\Foundation\\Testing\\RefreshDatabase' tests/ | xargs sed -i 's/Illuminate\\Foundation\\Testing\\RefreshDatabase/Tonysm\\DbCreateCommand\\Testing\\RefreshDatabase/g'
+```
+
+You need to boot this setup trait in your base TestCase manually, because Laravel does not do it automatically:
+
+```php
+<?php
+
+namespace Tests;
+
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Tonysm\DbCreateCommand\Testing\RefreshDatabase;
+
+abstract class TestCase extends BaseTestCase
+{
+    use CreatesApplication;
+
+    protected function setUpTraits()
+    {
+        $uses = parent::setUpTraits();
+
+        if (isset($uses[RefreshDatabase::class])) {
+            $this->refreshDatabase();
+        }
+
+        return $uses;
+    }
+}
+```
+
 You can keep running you tests with PHPUnit:
 
 ``` php
