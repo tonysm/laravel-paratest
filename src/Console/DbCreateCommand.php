@@ -20,6 +20,7 @@ class DbCreateCommand extends Command
      */
     protected $signature = 'db:create 
         {--dry-run}
+        {--database= : The database name to test}
     ';
 
     /**
@@ -54,6 +55,7 @@ class DbCreateCommand extends Command
 
         $connection = config('database.default');
         $configs = config(sprintf('database.connections.%s', $connection));
+        $configs['database'] = $this->option('database') ?: $configs['database'];
 
         $builder = new Builder(
             $this->makeConnector($configs, $dryRun),
