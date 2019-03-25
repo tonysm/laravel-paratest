@@ -2,9 +2,9 @@
 
 namespace Tonysm\DbCreateCommand\Testing\Paratest;
 
-use Illuminate\Support\Facades\Artisan;
 use ParaTest\Runners\PHPUnit\Runner;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Artisan;
 use ParaTest\Runners\PHPUnit\BaseRunner;
 use Illuminate\Contracts\Console\Kernel;
 
