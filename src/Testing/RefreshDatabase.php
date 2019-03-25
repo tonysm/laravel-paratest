@@ -4,6 +4,15 @@ namespace Tonysm\DbCreateCommand\Testing;
 
 use Illuminate\Contracts\Console\Kernel;
 
+/**
+ * Trait RefreshDatabase
+ *
+ * Most of the code here was copied from Laravel's RefreshDatabase trait.
+ *
+ * @package Tonysm\DbCreateCommand\Testing
+ *
+ * @see https://github.com/laravel/framework/blob/5.8/src/Illuminate/Foundation/Testing/RefreshDatabase.php
+ */
 trait RefreshDatabase
 {
     /**
