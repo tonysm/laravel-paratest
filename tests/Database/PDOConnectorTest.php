@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class PDOConnectorTest extends TestCase
 {
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

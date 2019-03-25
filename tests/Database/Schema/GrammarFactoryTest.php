@@ -25,12 +25,10 @@ class GrammarFactoryTest extends TestCase
         ];
     }
 
-    /**
-     * @test
-     * @expectedException \RuntimeException
-     */
+    /** @test */
     public function throws_exception_when_driver_not_implemented()
     {
+        $this->expectException(\RuntimeException::class);
        (new GrammarFactory())->make('sqlite');
     }
 }

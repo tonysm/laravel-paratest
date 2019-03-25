@@ -9,7 +9,7 @@ use Tonysm\DbCreateCommand\Database\Connector;
 
 class BuilderTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->connector = new FakeConnector();
         $this->grammars = Mockery::mock(GrammarFactory::class, [
