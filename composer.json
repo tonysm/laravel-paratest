@@ -17,6 +17,7 @@
     ],
     "require": {
         "php": "^7.1",
+        "brianium/paratest": "^3.0",
         "illuminate/support": "5.8.*"
     },
     "require-dev": {
