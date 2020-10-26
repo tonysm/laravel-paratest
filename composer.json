@@ -1,11 +1,11 @@
 {
-    "name": "tonysm/dbcreatecmd",
-    "description": "Artisan command to create a database",
+    "name": "tonysm/laravel-paratest",
+    "description": "Run your Laravel feature tests in parallel without race conditions.",
     "keywords": [
-        "tonysm",
-        "dbcreatecmd"
+        "laravel",
+        "paratest"
     ],
-    "homepage": "https://github.com/tonysm/dbcreatecmd",
+    "homepage": "https://github.com/tonysm/laravel-paratest",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -16,22 +16,22 @@
         }
     ],
     "require": {
-        "php": "^7.1",
-        "brianium/paratest": "^3.0",
-        "illuminate/support": "5.8.*"
+        "php": "^7.3",
+        "brianium/paratest": "^5.4",
+        "illuminate/support": "^8.0"
     },
     "require-dev": {
-        "orchestra/testbench": "3.8.*",
-        "phpunit/phpunit": "^8.0"
+        "orchestra/testbench": "^6.2",
+        "phpunit/phpunit": "^9.3"
     },
     "autoload": {
         "psr-4": {
-            "Tonysm\\DbCreateCommand\\": "src"
+            "Tonysm\\LaravelParatest\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tonysm\\DbCreateCommand\\Tests\\": "tests"
+            "Tonysm\\LaravelParatest\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -45,10 +45,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Tonysm\\DbCreateCommand\\DbCreateCommandServiceProvider"
+                "Tonysm\\LaravelParatest\\LaravelParatestServiceProvider"
             ],
             "aliases": {
-                "DbCreateCommand": "Tonysm\\DbCreateCommand\\DbCreateCommandFacade"
+                "LaravelParatest": "Tonysm\\LaravelParatest\\LaravelParatestFacade"
             }
         }
     }
