@@ -16,7 +16,7 @@ You also don't have to worry about creating the test databases. They will be cre
 You can install the package via composer:
 
 ```bash
-composer require tonysm/dbcreatecommand
+composer require tonysm/laravel-paratest
 ```
 
 ## Usage
@@ -39,7 +39,7 @@ class MyTest extends TestCase
 Tip: to replace all existing usages of Laravel's RefreshDatabase trait with the package's, you can use the following command:
 
 ```bash
-grep -rl 'Illuminate\\Foundation\\Testing\\RefreshDatabase' tests/ | xargs sed -i 's/Illuminate\\Foundation\\Testing\\RefreshDatabase/Tonysm\\DbCreateCommand\\Testing\\RefreshDatabase/g'
+grep -rl 'Illuminate\\Foundation\\Testing\\RefreshDatabase' tests/ | xargs sed -i 's/Illuminate\\Foundation\\Testing\\RefreshDatabase/Tonysm\\LaravelParatest\\Testing\\RefreshDatabase/g'
 ```
 
 You need to boot this setup trait in your base TestCase manually, because Laravel does not do it automatically:
@@ -90,7 +90,7 @@ When using paratest, one database will be created for each process. If you want 
             "Tests\\": "tests/"
         },
         "files": [
-            "vendor/tonysm/dbcreatecmd/src/ParatestLaravelRunner.php"
+            "vendor/tonysm/laravel-paratest/src/ParatestLaravelRunner.php"
         ]
     }
 }
