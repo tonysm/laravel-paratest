@@ -16,7 +16,7 @@ You also don't have to worry about creating the test databases. They will be cre
 You can install the package via composer:
 
 ```bash
-composer require tonysm/laravel-paratest
+composer require tonysm/laravel-paratest --dev
 ```
 
 ## Usage
