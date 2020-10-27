@@ -1,6 +1,6 @@
 <?php
 
-namespace Tonysm\DbCreateCommand\Testing\Paratest;
+namespace Tonysm\LaravelParatest\Testing\Paratest;
 
 use ParaTest\Runners\PHPUnit\Runner;
 use Illuminate\Foundation\Application;

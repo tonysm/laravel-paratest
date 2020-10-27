@@ -28,7 +28,7 @@ Instead of using Laravel's _RefreshDatabase_ trait, use the package one:
 ```php
 <?php
 
-use Tonysm\DbCreateCommand\Testing\RefreshDatabase;
+use Tonysm\LaravelParatest\Testing\RefreshDatabase;
 
 class MyTest extends TestCase
 {
@@ -50,7 +50,7 @@ You need to boot this setup trait in your base TestCase manually, because Larave
 namespace Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
-use Tonysm\DbCreateCommand\Testing\RefreshDatabase;
+use Tonysm\LaravelParatest\Testing\RefreshDatabase;
 
 abstract class TestCase extends BaseTestCase
 {

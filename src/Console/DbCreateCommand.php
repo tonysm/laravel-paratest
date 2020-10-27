@@ -1,8 +1,8 @@
 <?php
 
-namespace Tonysm\DbCreateCommand\Console;
+namespace Tonysm\LaravelParatest\Console;
 
-use Tonysm\DbCreateCommand\Database\{
+use Tonysm\LaravelParatest\Database\{
     Connector,
     PDOConnector,
     DryRunConnector,
@@ -18,7 +18,7 @@ class DbCreateCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'db:create 
+    protected $signature = 'db:create
         {--dry-run}
         {--database= : The database name to test}
     ';

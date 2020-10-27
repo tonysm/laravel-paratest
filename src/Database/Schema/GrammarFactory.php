@@ -1,6 +1,6 @@
 <?php
 
-namespace Tonysm\DbCreateCommand\Database\Schema;
+namespace Tonysm\LaravelParatest\Database\Schema;
 
 use RuntimeException;
 

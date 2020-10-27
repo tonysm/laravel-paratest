@@ -1,8 +1,8 @@
 <?php
 
-namespace Tonysm\DbCreateCommand\Database\Schema;
+namespace Tonysm\LaravelParatest\Database\Schema;
 
-use Tonysm\DbCreateCommand\Database\Connector;
+use Tonysm\LaravelParatest\Database\Connector;
 
 class Builder
 {

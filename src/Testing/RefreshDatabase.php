@@ -1,6 +1,6 @@
 <?php
 
-namespace Tonysm\DbCreateCommand\Testing;
+namespace Tonysm\LaravelParatest\Testing;
 
 use Illuminate\Contracts\Console\Kernel;
 
