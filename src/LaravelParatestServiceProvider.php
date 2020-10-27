@@ -7,7 +7,7 @@ use Tonysm\LaravelParatest\Console\DbCreateCommand as DbCreateCLICommand;
 use Tonysm\LaravelParatest\Console\DbReCreateCommand as DbReCreateCLICommand;
 use Tonysm\LaravelParatest\Console\DbDropCommand as DbDropCLICommand;
 
-class LaraveParatestServiceProvider extends ServiceProvider
+class LaravelParatestServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
