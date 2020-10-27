@@ -1,6 +1,6 @@
 <?php
 
-namespace Tonysm\DbCreateCommand\Database;
+namespace Tonysm\LaravelParatest\Database;
 
 interface Connector
 {

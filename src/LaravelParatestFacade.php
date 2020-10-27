@@ -1,13 +1,13 @@
 <?php
 
-namespace Tonysm\DbCreateCommand;
+namespace Tonysm\LaravelParatest;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Tonysm\DbCreateCommand\Skeleton\SkeletonClass
+ * @see \Tonysm\LaravelParatest\Skeleton\SkeletonClass
  */
-class DbCreateCommandFacade extends Facade
+class LaravelParatestFacade extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -16,6 +16,6 @@ class DbCreateCommandFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'dbcreatecommand';
+        return 'laravel-paratest';
     }
 }

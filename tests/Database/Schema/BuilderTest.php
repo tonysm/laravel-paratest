@@ -1,11 +1,11 @@
 <?php
 
-namespace Tonysm\DbCreateCommand\Database\Schema;
+namespace Tonysm\LaravelParatest\Database\Schema;
 
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Assert as PHPUnit;
-use Tonysm\DbCreateCommand\Database\Connector;
+use Tonysm\LaravelParatest\Database\Connector;
 
 class BuilderTest extends TestCase
 {

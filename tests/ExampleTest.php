@@ -1,6 +1,6 @@
 <?php
 
-namespace Tonysm\DbCreateCommand\Tests;
+namespace Tonysm\LaravelParatest\Tests;
 
 use PHPUnit\Framework\TestCase;
 

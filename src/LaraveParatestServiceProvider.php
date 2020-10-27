@@ -1,13 +1,13 @@
 <?php
 
-namespace Tonysm\DbCreateCommand;
+namespace Tonysm\LaravelParatest;
 
 use Illuminate\Support\ServiceProvider;
-use Tonysm\DbCreateCommand\Console\DbCreateCommand as DbCreateCLICommand;
-use Tonysm\DbCreateCommand\Console\DbReCreateCommand as DbReCreateCLICommand;
-use Tonysm\DbCreateCommand\Console\DbDropCommand as DbDropCLICommand;
+use Tonysm\LaravelParatest\Console\DbCreateCommand as DbCreateCLICommand;
+use Tonysm\LaravelParatest\Console\DbReCreateCommand as DbReCreateCLICommand;
+use Tonysm\LaravelParatest\Console\DbDropCommand as DbDropCLICommand;
 
-class DbCreateCommandServiceProvider extends ServiceProvider
+class LaraveParatestServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -16,7 +16,7 @@ class DbCreateCommandServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('dbcreatecommand.php'),
+                __DIR__.'/../config/config.php' => config_path('paratest.php'),
             ], 'config');
 
             // Registering package commands.
@@ -34,11 +34,11 @@ class DbCreateCommandServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'dbcreatecommand');
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'paratest');
 
         // Register the main class to use with the facade
-        $this->app->singleton('dbcreatecommand', function () {
-            return new DbCreateCommand;
+        $this->app->singleton('laravel-paratest', function () {
+            return new LaravelParatest;
         });
     }
 }
