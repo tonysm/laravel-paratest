@@ -1,9 +1,9 @@
 # Parallel Integration Tests in Laravel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/tonysm/dbcreatecmd.svg?style=flat-square)](https://packagist.org/packages/tonysm/dbcreatecmd)
-[![Build Status](https://img.shields.io/travis/tonysm/dbcreatecmd/master.svg?style=flat-square)](https://travis-ci.org/tonysm/dbcreatecmd)
-[![Quality Score](https://img.shields.io/scrutinizer/g/tonysm/dbcreatecmd.svg?style=flat-square)](https://scrutinizer-ci.com/g/tonysm/dbcreatecmd)
-[![Total Downloads](https://img.shields.io/packagist/dt/tonysm/dbcreatecmd.svg?style=flat-square)](https://packagist.org/packages/tonysm/dbcreatecmd)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/tonysm/laravel-paratest.svg?style=flat-square)](https://packagist.org/packages/tonysm/laravel-paratest)
+[![Build Status](https://img.shields.io/travis/tonysm/laravel-paratest/master.svg?style=flat-square)](https://travis-ci.org/tonysm/laravel-paratest)
+[![Quality Score](https://img.shields.io/scrutinizer/g/tonysm/laravel-paratest.svg?style=flat-square)](https://scrutinizer-ci.com/g/tonysm/laravel-paratest)
+[![Total Downloads](https://img.shields.io/packagist/dt/tonysm/laravel-paratest.svg?style=flat-square)](https://packagist.org/packages/tonysm/laravel-paratest)
 
 This package ships with some helper Artisan commands and testing traits to allow you running your Feature Tests in parallel using [Paratest](https://github.com/paratestphp/paratest) against a MySQL or PostgreSQL database without conflicts.
 
