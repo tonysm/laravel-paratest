@@ -2,34 +2,29 @@
 
 namespace Tonysm\LaravelParatest\Testing\Paratest;
 
-use ParaTest\Runners\PHPUnit\Options;
-use ParaTest\Runners\PHPUnit\Runner;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Artisan;
-use ParaTest\Runners\PHPUnit\BaseRunner;
 use Illuminate\Contracts\Console\Kernel;
+use ParaTest\Runners\PHPUnit\Options;
+use ParaTest\Runners\PHPUnit\RunnerInterface;
+use ParaTest\Runners\PHPUnit\WrapperRunner;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class LaravelRunner extends BaseRunner
+class LaravelRunner implements RunnerInterface
 {
     /**
-     * @var \ParaTest\Runners\PHPUnit\Runner
+     * @var WrapperRunner
      */
-    protected $innerRunner;
+    private $innerRunner;
+    /**
+     * @var Options
+     */
+    private $options;
 
     public function __construct(Options $options, OutputInterface $output)
     {
-        parent::__construct($options, $output);
-
-        $this->innerRunner = new Runner($options, $output);
-    }
-
-    /**
-     * @throws \Exception
-     */
-    public function doRun(): void
-    {
-        $this->tearDownTestDatabases();
+        $this->options = $options;
+        $this->innerRunner = new WrapperRunner($options, $output);
     }
 
     public function tearDownTestDatabases()
@@ -45,7 +40,7 @@ class LaravelRunner extends BaseRunner
         }
     }
 
-    protected function swapTestingDatabase($app, $driver, $dbName): void
+    private function swapTestingDatabase($app, $driver, $dbName): void
     {
         // Paratest gives each process a unique TEST_TOKEN env variable.
         // When that's not set, we can default to 1 because it's
@@ -64,8 +59,14 @@ class LaravelRunner extends BaseRunner
         return $app;
     }
 
-    protected function beforeLoadChecks(): void
+    public function run(): void
     {
-        // TODO: Implement beforeLoadChecks() method.
+        $this->innerRunner->run();
+        $this->tearDownTestDatabases();
+    }
+
+    public function getExitCode(): int
+    {
+        return $this->innerRunner->getExitCode();
     }
 }
