@@ -2,11 +2,13 @@
 
 namespace Tonysm\LaravelParatest\Testing\Paratest;
 
+use ParaTest\Runners\PHPUnit\Options;
 use ParaTest\Runners\PHPUnit\Runner;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Artisan;
 use ParaTest\Runners\PHPUnit\BaseRunner;
 use Illuminate\Contracts\Console\Kernel;
+use Symfony\Component\Console\Output\OutputInterface;
 
 class LaravelRunner extends BaseRunner
 {
@@ -15,20 +17,18 @@ class LaravelRunner extends BaseRunner
      */
     protected $innerRunner;
 
-    public function __construct(array $opts = [])
+    public function __construct(Options $options, OutputInterface $output)
     {
-        parent::__construct($opts);
+        parent::__construct($options, $output);
 
-        $this->innerRunner = new Runner($opts);
+        $this->innerRunner = new Runner($options, $output);
     }
 
     /**
      * @throws \Exception
      */
-    public function run()
+    public function doRun(): void
     {
-        $this->innerRunner->run();
-
         $this->tearDownTestDatabases();
     }
 
@@ -39,7 +39,7 @@ class LaravelRunner extends BaseRunner
         $driver = $app['config']->get('database.default');
         $dbName = $app['config']->get("database.connections.{$driver}.database");
 
-        for ($i = 1; $i <= $this->options->processes; ++$i) {
+        for ($i = 1; $i <= $this->options->processes(); ++$i) {
             $this->swapTestingDatabase($app, $driver, sprintf('%s_test_%s', $dbName, $i));
             Artisan::call('db:drop');
         }
@@ -62,5 +62,10 @@ class LaravelRunner extends BaseRunner
         $app->make(Kernel::class)->bootstrap();
 
         return $app;
+    }
+
+    protected function beforeLoadChecks(): void
+    {
+        // TODO: Implement beforeLoadChecks() method.
     }
 }
